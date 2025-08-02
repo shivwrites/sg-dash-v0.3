@@ -11,31 +11,36 @@ const PostGeneratorScreen: React.FC<PostGeneratorScreenProps> = ({ onSelectSubSc
       title: "Share your learnings from a book",
       description: "Share the learnings from a book and let AI create a post for you.",
       bgColor: "bg-orange-50",
-      textColor: "text-orange-600"
+      textColor: "text-orange-600",
+      subScreenId: "share-book-learnings"
     },
     {
       title: "Share tips on your topic of interest",
       description: "Share the tips on your topic of interest and let AI create a post for you.",
       bgColor: "bg-purple-50",
-      textColor: "text-purple-600"
+      textColor: "text-purple-600",
+      subScreenId: "share-tips"
     },
     {
       title: "Share your recent learning",
       description: "Share the details of your recent learning and let AI create a post for you.",
       bgColor: "bg-teal-50",
-      textColor: "text-teal-600"
+      textColor: "text-teal-600",
+      subScreenId: "share-learning"
     },
     {
       title: "Share your favourite tool",
       description: "Share the details of your favourite tool and let AI create a post for you.",
       bgColor: "bg-pink-50",
-      textColor: "text-pink-600"
+      textColor: "text-pink-600",
+      subScreenId: "share-tool"
     },
     {
       title: "Share your recent struggle",
       description: "Share the details of your recent struggle and let AI create a post for you.",
       bgColor: "bg-blue-50",
-      textColor: "text-blue-600"
+      textColor: "text-blue-600",
+      subScreenId: "share-struggle"
     }
   ];
 
@@ -175,7 +180,7 @@ const PostGeneratorScreen: React.FC<PostGeneratorScreenProps> = ({ onSelectSubSc
           {templates.map((template, index) => (
             <div
               key={index}
-              onClick={() => onSelectSubScreen(`template-${index}`)}
+              onClick={() => onSelectSubScreen(template.subScreenId)}
               className={`${template.bgColor} rounded-lg p-6 hover:shadow-md transition-shadow duration-200 cursor-pointer border border-gray-100`}
             >
               <h3 className={`text-lg font-semibold ${template.textColor} mb-3`}>
